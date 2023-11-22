@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Доска объявлений для игроков</title>
+</head>
+<body>
+    <div id="content">
+        {% block content %}
+          {% if user.is_authenticated %}
+           <a href="{% url 'account_logout' %}">Выйти ({{ user.username }})</a>
+          {% else %}
+           <a href="{% url 'account_login' %}">Вход</a>
+           <a href="{% url 'account_signup' %}">Регистрация</a>
+          {% endif %}
+        {% endblock %}
+
+    </div>
+</body>
+</html>

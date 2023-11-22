@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Список объявлений</h1>
+    <ul>
+        {% for article in bulletinboard %}
+            <li><a href="{% url 'ad_detail' article.id %}">{{ article.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
