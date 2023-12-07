@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>{{ article.author }}</h1>
-    <p>{{ article.title }}</p>
+    <h1>Автор статьи: {{ article.author }}</h1>
+    <h2>Собственно статья:" {{ article.title }}"</h2>
+    <h3>Текст: </h3>
     <p>{{ article.text }}</p>
-    <p>Категория: {{ article.category }}</p>
+    <h4>Тип персонажа:</h4>
+    <p> {{ article.category }}</p>
 {% endblock %}

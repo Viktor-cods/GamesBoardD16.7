@@ -73,7 +73,7 @@ ROOT_URLCONF = 'bulletinboard.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates/flatpages')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,6 +93,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
+
 
 WSGI_APPLICATION = 'board.wsgi.application'
 
@@ -162,6 +164,16 @@ LOGOUT_REDIRECT_URL='/'
 
 ACCOUNT_EMAIL_UNIQUE= True
 ACCOUNT_EMAIL_CONFIRMATION_REQUIRED= True
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+
+
+ACCOUNT_FORMS = {"signup": "allauth.account.forms.SignupForm"}
+
 
 
 

@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Поиск объявлений</h1>
+  <h1>Пoиск статей</h1>
+  <p>Введите первое слово от заголовка необходимой вам статьи. </p>
   <form method="get">
     {{ form.as_p }}
     <button type="submit">Поиск</button>
   </form>
-
-  <ul>
+<h2><ul>
     {% for article in bulletinboard %}
       <li>{{ article.title }}</li>
     {% empty %}
       <li>Ничего не найдено</li>
     {% endfor %}
-  </ul>
+   </ul></h2>
+
 {% endblock %}

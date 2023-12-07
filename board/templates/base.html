@@ -5,6 +5,13 @@
     <title>Доска объявлений для игроков</title>
 </head>
 <body>
+ <h1>Доска объявлений игрового портала</h1>
+  <h2> Список статей: </h2>
+       {% for article in bulletinboard %}
+            <a href="{% url 'article_detail' article.id %}"><li>{{ article.title }}</li></a>
+        {% endfor %}
+  <h3><li><a href="{% url 'search'  %}">Поиск статей</a></li></h3>
+  <h4><li><a href="{% url 'create_article'  %}">Написать статью</a></li></h4>
     <div id="content">
         {% block content %}
           {% if user.is_authenticated %}
@@ -13,8 +20,8 @@
            <a href="{% url 'account_login' %}">Вход</a>
            <a href="{% url 'account_signup' %}">Регистрация</a>
           {% endif %}
-        {% endblock %}
 
+{% endblock %}
     </div>
 </body>
 </html>
